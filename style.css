@@ -40,18 +40,21 @@ body button:focus {
 
 .container {
   margin-top: 70px;
-  color: #000;
+  color: #eb5a29;
   font-size: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   height: 80vh;
+}
+
+.container .title {
+  display: block;
+  text-align: center;
+  padding: 25px;
+  font-weight: bolder;
+}
+
+.container .home h1 {
+  display: block;
+  text-align: center;
 }
 
 .container .calculator {
@@ -62,6 +65,11 @@ body button:focus {
   border-radius: 5px;
   -webkit-box-shadow: -4px -2px 9px 1px #9E9E9E;
           box-shadow: -4px -2px 9px 1px #9E9E9E;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .container .calculator input {
