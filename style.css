@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body input:focus,
+body button:focus {
+  outline: none;
+}
+
+.container-fluid {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img(11).jpg");
+  height: 100vh;
+}
+
+.navbar {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
+  background-image: linear-gradient(to left, #ff8a00, #da1b60);
+  color: #fff;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+.navbar .collapse li a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar .active {
+  color: red !important;
+}
+
+.container {
+  margin-top: 70px;
+  color: #000;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+}
+
+.container .calculator {
+  max-width: 400px;
+  background: -webkit-gradient(linear, right bottom, left top, from(#ff8a00), to(#da1b60));
+  background: linear-gradient(to top left, #ff8a00, #da1b60);
+  padding: 30px;
+  border-radius: 5px;
+  -webkit-box-shadow: -4px -2px 9px 1px #9E9E9E;
+          box-shadow: -4px -2px 9px 1px #9E9E9E;
+}
+
+.container .calculator input {
+  width: 100%;
+  height: 40px;
+  background: #6c757d80;
+  border: 1px solid tomato;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.container .calculator input::-webkit-input-placeholder {
+  color: #FF9800;
+}
+
+.container .calculator input:-ms-input-placeholder {
+  color: #FF9800;
+}
+
+.container .calculator input::-ms-input-placeholder {
+  color: #FF9800;
+}
+
+.container .calculator input::placeholder {
+  color: #FF9800;
+}
+
+.container .calculator .box-button {
+  margin-top: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 8px;
+}
+
+.container .calculator .box-button button {
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  -webkit-box-shadow: -1px 1px 3px #0000008c;
+          box-shadow: -1px 1px 3px #0000008c;
+}
+
+.container .calculator .box-button button:hover {
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.container .calculator .box-button button:active {
+  -webkit-filter: contrast(10%);
+          filter: contrast(10%);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.container .calculator .box-button .clean {
+  background: #ffc107;
+}
+
+.container .calculator .box-button .delete {
+  background: tomato;
+}
+
+.container .calculator .box-button .cal {
+  background: #03A9F4;
+}
+
+.container .calculator .box-button .number {
+  background: #9E9E9E;
+}
+
+.container .calculator .box-button .equal {
+  background: #9C27B0;
+}
+/*# sourceMappingURL=style.css.map */
