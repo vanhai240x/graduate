@@ -1,28 +1,32 @@
-<div ng-controller="ProfileCtrl" class="profile">
-    <h1 class="title">Thông tin sinh viên lớp 16CNTT1A</h1>
-    <div>
-        <label>Tên sinh viên:</label>
-        <input type="text">
-    </div>
-    <div>
-        <label>Giới tính:</label>
-        <form action="">
-            <input type="radio" name="gender" value="male"> Nam<br>
-            <input type="radio" name="gender" value="female"> Nữ<br>
-            <input type="radio" name="gender" value="other"> Khác
-        </form>
-    </div>
-    <div>
-        <label>Ngày sinh:</label>
-        <input type="text">
-    </div>
-    <div>
-        <label>Quê quán:</label>
-        <input type="text">
-    </div>
+<h1 class="title">Thông tin sinh viên lớp 16CNTT1A</h1>
 
-    <table class="table">
-        <thead class="thead-dark">
+<div ng-controller="ProfileCtrl" class="profile">    
+
+    <form action="" method="post">
+        <div>
+            <label>Tên sinh viên:</label><input class="" type="text"><br>
+        </div>
+        <div>
+            <label>Giới tính:</label>
+            <input type="radio" name="gender" value="male"> Nam
+            <input type="radio" name="gender" value="female"> Nữ
+            <input type="radio" name="gender" value="other"> Khác<br>
+        </div>
+        <div>
+            <label>Ngày sinh:</label><input class="" type="text"><br>
+        </div>
+        <div>
+            <label>Quê quán:</label><input class="" type="text"><br>
+        </div>
+        <div class="wrap">
+            <button type="reset" class="button">Xóa</button>
+            <button type="submit" class="button">Thêm</button>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+
+    <table class="table table-hover">
+        <thead>
             <tr>
                 <th>Họ tên</th>
                 <th>Giới tính</th>
