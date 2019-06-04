@@ -60,6 +60,10 @@ routerApp.controller('GlobalCtrl', () => {
     $('.nav-link').removeClass('active')
     $('.nav-3').addClass('active')
   })
+  // Remove class .active when click on .navbar-brand
+  $('.navbar-brand').click(() => {
+    $('.nav-link').removeClass('active')
+  })
 })
 
 // Home Controller
@@ -75,5 +79,15 @@ routerApp.controller('HomeCtrl', () => {
 
 // Calculator controller
 routerApp.controller('CalculatorCtrl', () => {
-
+  return false
 })
+
+// Lottery controller
+routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
+  $scope.selectedNumber = []
+
+  num1 = $('#num-1 :selected').text();
+  $('.dial').click(() => {
+    console.log(num1)
+  })
+}])

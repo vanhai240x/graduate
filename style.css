@@ -393,7 +393,7 @@ table tbody td {
   width: 70px;
   height: 70px;
   border-radius: 40px;
-  padding-left: 22px;
+  padding-left: 13px;
   font-size: 30px;
   font-weight: bold;
   background-image: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
@@ -401,12 +401,58 @@ table tbody td {
   color: #fff;
   border: none;
   margin: 0 5px;
+  -webkit-box-shadow: -5px 5px 10px 1px #633e31;
+          box-shadow: -5px 5px 10px 1px #633e31;
 }
 
 .lottery .select_num option {
   font-size: 16px;
   background: tomato;
   color: #000;
+}
+
+.lottery .btn {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ff8a00), to(#da1b60));
+  background-image: linear-gradient(to top left, #ff8a00, #da1b60);
+  border: none;
+  height: 45px;
+  width: 200px;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  left: 50%;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  line-height: 31px;
+}
+
+.lottery .loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.lottery .loading img {
+  width: 25%;
+}
+
+.lottery .result {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.lottery .result span {
+  border-radius: 40px;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
+  background-image: linear-gradient(to left, #ff8a00, #da1b60);
+  color: #fff;
+  border: none;
+  margin: 0 5px;
+  -webkit-box-shadow: -5px 5px 10px 1px #633e31;
+  box-shadow: -5px 5px 10px 1px #633e31;
 }
 
 @media screen and (min-width: 768px) {
