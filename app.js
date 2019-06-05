@@ -86,8 +86,30 @@ routerApp.controller('CalculatorCtrl', () => {
 routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
   $scope.selectedNumber = []
 
-  num1 = $('#num-1 :selected').text();
-  $('.dial').click(() => {
-    console.log(num1)
-  })
+  // Add child to array when selectbox change
+  $("#num-1").change(function() {
+    $scope.selectedNumber[0] = ($(this).find("option:selected").text())
+  });
+  $("#num-2").change(function() {
+    $scope.selectedNumber[1] = ($(this).find("option:selected").text())
+  });
+  $("#num-3").change(function() {
+    $scope.selectedNumber[2] = ($(this).find("option:selected").text())
+  });
+  $("#num-4").change(function() {
+    $scope.selectedNumber[3] = ($(this).find("option:selected").text())
+  });
+  $("#num-5").change(function() {
+    $scope.selectedNumber[4] = ($(this).find("option:selected").text())
+  });
+  $("#num-6").change(function() {
+    $scope.selectedNumber[5] = ($(this).find("option:selected").text())
+  });
+
+  $scope.dial = () => {
+    console.log($scope.selectedNumber)
+    if($scope.selectedNumber = []){
+      alert("Ban chua chon so")
+    }
+  }
 }])

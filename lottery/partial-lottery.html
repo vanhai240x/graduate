@@ -46,10 +46,10 @@
   <!-- Step 1: Slect Number -->
   <h3>Bước 1: Chọn số</h3>
   <div class="select_num">
-    <select name="" id="num-1">
-      <option value="">01</option>
-      <option value="">02</option>
-      <option value="">03</option>
+    <select id="num-1">
+      <option value="w" selected="selected">01</option>
+      <option value="e">02</option>
+      <option value="r">03</option>
       <option value="">04</option>
       <option value="">05</option>
       <option value="">06</option>
@@ -332,7 +332,7 @@
 
   <!-- Step 2: Random Lucky -->
   <h3>Bước 2: Quay số</h3>
-  <div class="btn btn-primary dial">Quay Số</div>
+  <div class="btn btn-primary dial" ng-click="dial()">Quay Số</div>
   <div class="loading">
     <img src="loading.gif" alt="">
   </div>
