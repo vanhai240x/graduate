@@ -60,6 +60,7 @@ routerApp.controller('GlobalCtrl', () => {
     $('.nav-link').removeClass('active')
     $('.nav-3').addClass('active')
   })
+
   // Remove class .active when click on .navbar-brand
   $('.navbar-brand').click(() => {
     $('.nav-link').removeClass('active')
@@ -85,31 +86,117 @@ routerApp.controller('CalculatorCtrl', () => {
 // Lottery controller
 routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
   $scope.selectedNumber = []
+  $scope.getNum1 = "0"
+  $scope.getNum2 = "0"
+  $scope.getNum3 = "0"
+  $scope.getNum4 = "0"
+  $scope.getNum5 = "0"
+  $scope.getNum6 = "0"
+  $scope.count = 0
+  $scope.countView = 0
+  $scope.getMoney = "0"
+  $scope.luckyLater = ""
 
   // Add child to array when selectbox change
   $("#num-1").change(function() {
     $scope.selectedNumber[0] = ($(this).find("option:selected").text())
+    $('.warning-1').addClass('d-none')
   });
   $("#num-2").change(function() {
     $scope.selectedNumber[1] = ($(this).find("option:selected").text())
+    $('.warning-2').addClass('d-none')
   });
   $("#num-3").change(function() {
     $scope.selectedNumber[2] = ($(this).find("option:selected").text())
+    $('.warning-3').addClass('d-none')
   });
   $("#num-4").change(function() {
     $scope.selectedNumber[3] = ($(this).find("option:selected").text())
+    $('.warning-4').addClass('d-none')
   });
   $("#num-5").change(function() {
     $scope.selectedNumber[4] = ($(this).find("option:selected").text())
+    $('.warning-5').addClass('d-none')
   });
   $("#num-6").change(function() {
     $scope.selectedNumber[5] = ($(this).find("option:selected").text())
+    $('.warning-6').addClass('d-none')
   });
 
+  // Function: Create random 6 numbers lucky
+  randomSixNum = () => {
+    $scope.randomNumber = []
+
+    for (let i = 0; i < 6; i++) {
+      let x = Math.floor((Math.random() * 2) + 1)
+      $scope.randomNumber.push(x)      
+    }
+    return $scope.randomNumber, $scope.getMoney, $scope.luckyLater
+  }
+
+  // Function: Check result and get reward
+  checkResult = (selectedNumber, randomNumber) => {
+    for (let i = 0; i < 6; i++) {
+      if (selectedNumber[i] == randomNumber[i]) {
+        $scope.count++
+      }      
+    }
+    switch ($scope.count) {
+      case 3:
+        $scope.getMoney = "30.000"
+        $scope.luckyLater = ""
+        break;
+      case 4:
+        $scope.getMoney = "300.000"
+        $scope.luckyLater = ""
+        break; 
+      case 5:
+        $scope.getMoney = "10.000.000"
+        $scope.luckyLater = ""
+        break; 
+      case 6:
+        $scope.getMoney = "Tối thiểu 12 tỷ và tích lũy"
+        $scope.luckyLater = ""
+        break; 
+      default:
+        $scope.getMoney = "0"
+        $scope.luckyLater = "Chúc bạn may mắn lần sau !"
+        break;
+    }
+    return $scope.countView = $scope.count
+  }
+
+  // Funtion: Clean data
+  cleanData = () => {
+    $scope.count = 0
+  }
+
+  // Event when click on button Quay Số
   $scope.dial = () => {
-    console.log($scope.selectedNumber)
-    if($scope.selectedNumber = []){
-      alert("Ban chua chon so")
+    console.log("Số bạn chọn: " + $scope.selectedNumber)
+    if($scope.selectedNumber.length < 6){
+      alert("Bạn chưa chọn đủ 6 số !")
+    }
+    else{
+      randomSixNum()
+      $('.result').addClass('d-none')   // Hide result section
+      // $('.dial').attr('disabled', 'true')      
+      $('.loading').removeClass('d-none')   // Show loading icon
+      setTimeout(() => {
+        $('.loading').addClass('d-none')   // Hide loading icon after 2 seconds exist
+        $('.result').fadeIn(3000).removeClass('d-none')   // Show result section  
+        checkResult($scope.selectedNumber, $scope.randomNumber)   // Check result and get reward  
+        console.log("Số sau khi quay: " + $scope.randomNumber)
+        console.log("Trungs: " + checkResult($scope.selectedNumber, $scope.randomNumber))
+        // Binding result after random dial to View
+        $scope.getNum1 = $scope.randomNumber[0] < 10 ? "0" + $scope.randomNumber[0] : $scope.randomNumber[0]
+        $scope.getNum2 = $scope.randomNumber[1] < 10 ? "0" + $scope.randomNumber[1] : $scope.randomNumber[1]
+        $scope.getNum3 = $scope.randomNumber[2] < 10 ? "0" + $scope.randomNumber[2] : $scope.randomNumber[2]
+        $scope.getNum4 = $scope.randomNumber[3] < 10 ? "0" + $scope.randomNumber[3] : $scope.randomNumber[3]
+        $scope.getNum5 = $scope.randomNumber[4] < 10 ? "0" + $scope.randomNumber[4] : $scope.randomNumber[4]
+        $scope.getNum6 = $scope.randomNumber[5] < 10 ? "0" + $scope.randomNumber[5] : $scope.randomNumber[5]
+        cleanData()    
+      }, 2000)
     }
   }
 }])

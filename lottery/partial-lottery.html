@@ -46,6 +46,7 @@
   <!-- Step 1: Slect Number -->
   <h3>Bước 1: Chọn số</h3>
   <div class="select_num">
+    <i class="fas fa-exclamation-triangle warning-1"></i>
     <select id="num-1">
       <option value="w" selected="selected">01</option>
       <option value="e">02</option>
@@ -93,6 +94,7 @@
       <option value="">44</option>
       <option value="">45</option>
     </select>
+    <i class="fas fa-exclamation-triangle warning-2"></i>
     <select name="" id="num-2">
       <option value="">01</option>
       <option value="">02</option>
@@ -140,6 +142,7 @@
       <option value="">44</option>
       <option value="">45</option>
     </select>
+    <i class="fas fa-exclamation-triangle warning-3"></i>
     <select name="" id="num-3">
       <option value="">01</option>
       <option value="">02</option>
@@ -187,6 +190,7 @@
       <option value="">44</option>
       <option value="">45</option>
     </select>
+    <i class="fas fa-exclamation-triangle warning-4"></i>
     <select name="" id="num-4">
       <option value="">01</option>
       <option value="">02</option>
@@ -234,6 +238,7 @@
       <option value="">44</option>
       <option value="">45</option>
     </select>
+    <i class="fas fa-exclamation-triangle warning-5"></i>
     <select name="" id="num-5">
       <option value="">01</option>
       <option value="">02</option>
@@ -281,6 +286,7 @@
       <option value="">44</option>
       <option value="">45</option>
     </select>
+    <i class="fas fa-exclamation-triangle warning-6"></i>
     <select name="" id="num-6">
       <option value="">01</option>
       <option value="">02</option>
@@ -332,24 +338,24 @@
 
   <!-- Step 2: Random Lucky -->
   <h3>Bước 2: Quay số</h3>
-  <div class="btn btn-primary dial" ng-click="dial()">Quay Số</div>
-  <div class="loading">
+  <button class="btn btn-primary dial" ng-click="dial()">Quay Số</button>
+  <div class="loading d-none">
     <img src="loading.gif" alt="">
   </div>
-  <div class="result">
-    <span class="get_num1">00</span>
-    <span class="get_num2">00</span>
-    <span class="get_num3">00</span>
-    <span class="get_num4">00</span>
-    <span class="get_num5">00</span>
-    <span class="get_num6">00</span>
+  <div class="result d-none">
+    <h2>Kết quả quay số: </h2>
+    <span class="get_num1">{{getNum1}}</span>
+    <span class="get_num2">{{getNum2}}</span>
+    <span class="get_num3">{{getNum3}}</span>
+    <span class="get_num4">{{getNum4}}</span>
+    <span class="get_num5">{{getNum5}}</span>
+    <span class="get_num6">{{getNum6}}</span>
   </div>
-  <div class="result"></div>
 
   <!-- Step 3: Get Result -->
   <h3>Bước 3: Nhận kết quả - nhận thưởng</h3>
   <div class="reward">
-    <p>Ban chon trung <span class="quantity">{{}}</span> so </p>
-    <p>Gia tri giai thuong la <span class="get_money"></span> VND</p>
+    <p>Bạn chọn trúng <span class="quantity">{{countView}}</span> số </p>
+    <p>Giá trị giải thưởng là <span class="get_money">{{getMoney}}</span> VNĐ</p>{{luckyLater}}
   </div>
 </div>
