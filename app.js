@@ -141,7 +141,7 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
         $scope.count++
       }      
     }
-    switch ($scope.count) {
+    switch ($scope.count/2) {
       case 3:
         $scope.getMoney = "30.000"
         $scope.luckyLater = ""
@@ -163,7 +163,7 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
         $scope.luckyLater = "Chúc bạn may mắn lần sau !"
         break;
     }
-    return $scope.countView = $scope.count
+    return $scope.countView = $scope.count/2
   }
 
   // Funtion: Clean data
@@ -184,10 +184,11 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
       $('.loading').removeClass('d-none')   // Show loading icon
       setTimeout(() => {
         $('.loading').addClass('d-none')   // Hide loading icon after 2 seconds exist
-        $('.result').fadeIn(3000).removeClass('d-none')   // Show result section  
         checkResult($scope.selectedNumber, $scope.randomNumber)   // Check result and get reward  
         console.log("Số sau khi quay: " + $scope.randomNumber)
+        console.log("Count: " + $scope.count)
         console.log("Trungs: " + checkResult($scope.selectedNumber, $scope.randomNumber))
+        
         // Binding result after random dial to View
         $scope.getNum1 = $scope.randomNumber[0] < 10 ? "0" + $scope.randomNumber[0] : $scope.randomNumber[0]
         $scope.getNum2 = $scope.randomNumber[1] < 10 ? "0" + $scope.randomNumber[1] : $scope.randomNumber[1]
@@ -195,6 +196,17 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
         $scope.getNum4 = $scope.randomNumber[3] < 10 ? "0" + $scope.randomNumber[3] : $scope.randomNumber[3]
         $scope.getNum5 = $scope.randomNumber[4] < 10 ? "0" + $scope.randomNumber[4] : $scope.randomNumber[4]
         $scope.getNum6 = $scope.randomNumber[5] < 10 ? "0" + $scope.randomNumber[5] : $scope.randomNumber[5]
+        $('.get_num1').html($scope.getNum1)
+        $('.get_num2').html($scope.getNum2)
+        $('.get_num3').html($scope.getNum3)
+        $('.get_num4').html($scope.getNum4)
+        $('.get_num5').html($scope.getNum5)
+        $('.get_num6').html($scope.getNum6)
+        $('.quantity').html($scope.countView)
+        $('.get_money').html($scope.getMoney)
+        $('.lucky_later').html($scope.luckyLater)
+
+        $('.result').fadeIn(3000).removeClass('d-none')   // Show result section  
         cleanData()    
       }, 2000)
     }

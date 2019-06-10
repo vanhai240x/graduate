@@ -8,7 +8,8 @@ body {
 
 body input:focus,
 body button:focus,
-body select:focus {
+body select:focus,
+body textarea:focus {
   outline: none;
 }
 
@@ -372,6 +373,15 @@ table tbody td {
   height: 15px;
 }
 
+.profile form div textarea {
+  width: 100%;
+  border: 1px solid #eb5a29;
+  border-radius: 30px;
+  background: #9e9e9e2e;
+  padding: 15px;
+  color: #eb5a29;
+}
+
 .profile form .wrap .button {
   width: 100%;
   height: 40px;
@@ -471,6 +481,18 @@ table tbody td {
   .profile .wrap .button {
     width: 200px !important;
     margin: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    min-height: 56px;
+  }
+  .navbar-nav {
+    padding-bottom: 15px;
+  }
+  .navbar-nav .nav-link {
+    padding-left: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */

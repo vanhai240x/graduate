@@ -5,7 +5,8 @@ body {
   font-family: sans-serif;
   input:focus,
   button:focus,
-  select:focus {
+  select:focus,
+  textarea:focus {
     outline: none;
   }
 }
@@ -323,6 +324,14 @@ table {
         width: 30px;
         height: 15px;
       }
+      textarea{
+        width: 100%;
+        border: 1px solid #eb5a29;
+        border-radius: 30px;
+        background: #9e9e9e2e;
+        padding: 15px;
+        color: #eb5a29;
+      }
     }
     .wrap {
       .button {
@@ -421,6 +430,18 @@ table {
         width: 200px !important;
         margin: 0 20px;
       }
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .navbar{
+    min-height: 56px;
+  }
+  .navbar-nav{
+    padding-bottom: 15px;
+    .nav-link{
+      padding-left: 15px;
     }
   }
 }
