@@ -27,7 +27,7 @@ body textarea:focus {
 
 .container-fluid {
   background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img(11).jpg");
-  height: 150vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -105,7 +105,7 @@ table tbody td {
   margin-top: 56px;
   color: #eb5a29;
   font-size: 16px;
-  height: 80vh;
+  padding-bottom: 30px;
 }
 
 .container .title {
@@ -387,6 +387,13 @@ table tbody td {
   height: 40px;
 }
 
+.page-footer .footer-copyright {
+  background: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
+  background: linear-gradient(to left, #ff8a00, #da1b60);
+  color: #fff;
+  margin-bottom: -25px;
+}
+
 .lottery h3 {
   display: block;
   text-align: center;
@@ -397,6 +404,13 @@ table tbody td {
 
 .lottery .select_num {
   text-align: center;
+  margin: 3rem 0;
+}
+
+.lottery .select_num i {
+  position: relative;
+  top: -55px;
+  left: 55px;
 }
 
 .lottery .select_num select {
@@ -406,13 +420,13 @@ table tbody td {
   padding-left: 13px;
   font-size: 30px;
   font-weight: bold;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
-  background-image: linear-gradient(to left, #ff8a00, #da1b60);
-  color: #fff;
+  background-image: -webkit-gradient(linear, right top, left top, from(#e9ecef), to(#212529));
+  background-image: linear-gradient(to left, #e9ecef, #212529);
+  color: #352e2e;
   border: none;
   margin: 0 5px;
-  -webkit-box-shadow: -5px 5px 10px 1px #633e31;
-          box-shadow: -5px 5px 10px 1px #633e31;
+  -webkit-box-shadow: -9px 0px 10px 1px rgba(0, 0, 0, 0.9);
+          box-shadow: -9px 0px 10px 1px rgba(0, 0, 0, 0.9);
 }
 
 .lottery .select_num option {
@@ -451,18 +465,36 @@ table tbody td {
   margin: 50px 0;
 }
 
+.lottery .result h2 {
+  margin-bottom: 3rem;
+}
+
 .lottery .result span {
   border-radius: 40px;
   padding: 20px;
   font-size: 30px;
   font-weight: bold;
-  background-image: -webkit-gradient(linear, right top, left top, from(#ff8a00), to(#da1b60));
-  background-image: linear-gradient(to left, #ff8a00, #da1b60);
-  color: #fff;
+  background-image: -webkit-gradient(linear, right top, left top, from(#e9ecef), to(#212529));
+  background-image: linear-gradient(to left, #e9ecef, #212529);
+  color: #352e2e;
   border: none;
   margin: 0 5px;
-  -webkit-box-shadow: -5px 5px 10px 1px #633e31;
-  box-shadow: -5px 5px 10px 1px #633e31;
+  -webkit-box-shadow: -9px 0px 10px 1px rgba(0, 0, 0, 0.9);
+  box-shadow: -9px 0px 10px 1px rgba(0, 0, 0, 0.9);
+}
+
+.lottery .reward {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 768px) {

@@ -28,21 +28,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'lottery/partial-lottery.html',
       controller: 'LotteryCtrl'
     })
-
-
-  // About pages and multiple named views
-  // .state('about', {
-  //     url: '/about',
-  //     template: `<div class="jumbotron">
-  //                 <div class="container">
-  //                 <h1>Hello, world!</h1>
-  //                 <p>Contents ...</p>
-  //                 <p>
-  //                     <a class="btn btn-primary btn-lg">Learn more</a>
-  //                 </p>
-  //                 </div>
-  //             </div>`
-  // })
 })
 
 // Global controller
@@ -128,7 +113,7 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
     $scope.randomNumber = []
 
     for (let i = 0; i < 6; i++) {
-      let x = Math.floor((Math.random() * 2) + 1)
+      let x = Math.floor((Math.random() * 45) + 1)
       $scope.randomNumber.push(x)      
     }
     return $scope.randomNumber, $scope.getMoney, $scope.luckyLater
