@@ -7,25 +7,25 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
   // Home states 
     .state('home', {
       url: '/home',
-      templateUrl: 'home/partial-home.html',
+      templateUrl: 'home/partial-home.php',
       controller: 'HomeCtrl'
     })
     // Calculator states
     .state('calculator', {
       url: '/calculator',
-      templateUrl: 'calculator/partial-calculator.html',
+      templateUrl: 'calculator/partial-calculator.php',
       controller: 'CalculatorCtrl'
     })
     // Profile states 
     .state('profile', {
       url: '/profile',
-      templateUrl: 'profile/partial-profile.html',
+      templateUrl: 'profile/partial-profile.php',
       controller: 'ProfileCtrl'
     })
     // Lottery states 
     .state('lottery', {
       url: '/lottery',
-      templateUrl: 'lottery/partial-lottery.html',
+      templateUrl: 'lottery/partial-lottery.php',
       controller: 'LotteryCtrl'
     })
 })
@@ -191,9 +191,26 @@ routerApp.controller('LotteryCtrl', ['$scope', ($scope) => {
         $('.get_money').html($scope.getMoney)
         $('.lucky_later').html($scope.luckyLater)
 
-        $('.result').fadeIn(3000).removeClass('d-none')   // Show result section  
-        cleanData()    
+        $('.result').fadeIn(3000).removeClass('d-none')   // Show result section 
+        saveCookies()
+        cleanData()
       }, 2000)
     }
+  }
+
+  // Push data to Cookies
+  saveCookies = () => {
+    var myCookies = {}
+    myCookies["result"] = $scope.randomNumber
+    // Start reusable code
+    document.cookie = ""
+    var expiresAttrib = new Date(Date.now()).toString()
+    var cookieString = ""
+    for (var key in myCookies){
+      cookieString = key + "=" + myCookies[key] + ";" + expiresAttrib + ";"
+      document.cookie = cookieString
+    }
+    // End reusable code
+    document.cookie = $scope.randomNumber    
   }
 }])
