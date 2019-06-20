@@ -34,8 +34,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 routerApp.controller('GlobalCtrl', () => {
   // Add class .active to navbar when click nav-item on header
   $('.nav-1').click(() => {
-    $('.nav-link').removeClass('active')
-    $('.nav-1').addClass('active')
+    
   })
   $('.nav-2').click(() => {
     $('.nav-link').removeClass('active')
